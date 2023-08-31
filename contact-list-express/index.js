@@ -35,7 +35,9 @@ app.get('/', function(req, res){
 
 });
 
-
+app.get('/practice', function(req, res){
+    return res.render('practice', {title : "let us play here"});
+});
 
 
 
