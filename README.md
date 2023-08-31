@@ -20,3 +20,10 @@ dir : basichttpserver, being used the file system for print html file into the b
 
 # Contact List (Express JS)
 - set-up running server using the express
+
+# Rendered the Html from Express
+- Rendered the text and html to the browser, It's auto detect the contect type to html
+
+# ejs ( Template Emgine : Embeded JS )
+- installed the ejs and rendered the ejs file.
+- required to set the default template engine to let know the express framework.
