@@ -7,7 +7,12 @@ const app = express();
 
 
 
+// Returning Response From the Server 
+app.get('/', function(req, res){
 
+    // This is auto detect the html and set content-type:html by the Express JS
+    res.send("<h1>Cool, My server is running.</h1>")
+});
 
 
 
