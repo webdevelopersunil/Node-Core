@@ -14,3 +14,6 @@ dir : basichttpserver, being used the file system for print html file into the b
 # Extended to Multi Pages through Switch Routes
 - being used res.url for identify the route and Switch case for multi page paths.
 - for rendering page data used the fs(file system) function readFile.
+
+# Contact List (Express JS)
+- set-up running server using the express
