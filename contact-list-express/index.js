@@ -18,7 +18,20 @@ app.set('views', path.join(__dirname,'views'));
 
 
 
-
+var contactList = [
+    {
+        name : 'Sunil',
+        phone : 7878787878
+    },
+    {
+        name : 'AK',
+        phone : 7984328953
+    },
+    {
+        name : 'DK',
+        phone : 78675646345
+    },
+];
 
 
 
@@ -31,7 +44,10 @@ app.get('/', function(req, res){
 
     // Rendered the ejs file
     // In case of dynamic pass the value to the ejs file
-    return res.render('home',{ title : 'Embeded Java Script' });
+    return res.render('home',{ 
+        title : 'E Java Script',
+        contact_list : contactList
+    });
 
 });
 
