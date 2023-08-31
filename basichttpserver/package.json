@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/webdevelopersunil/Node-Core/issues"
   },
-  "homepage": "https://github.com/webdevelopersunil/Node-Core#readme"
+  "homepage": "https://github.com/webdevelopersunil/Node-Core#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
 }

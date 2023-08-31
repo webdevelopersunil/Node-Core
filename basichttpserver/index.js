@@ -9,7 +9,6 @@ function requestHandler(req, res){
 
     res.writeHead(200, {'content-type': 'text/html'});
 
-    
     // res.end("<h1>Stop Here</h1>");
     // Reading the file through the file system method
     fs.readFile('./index.html', function(err, data){
