@@ -30,7 +30,8 @@ app.get('/', function(req, res){
     // res.send("<h1>Cool, My server is running.</h1>")
 
     // Rendered the ejs file
-    return res.render('home');
+    // In case of dynamic pass the value to the ejs file
+    return res.render('home',{ title : 'Embeded Java Script' });
 
 });
 
