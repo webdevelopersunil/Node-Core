@@ -19,6 +19,8 @@ app.set('views', path.join(__dirname,'views'));
 // middleware for parsing the form data
 app.use(express.urlencoded());
 
+// Middleware for static files like (css,js,images and js libraries)
+app.use(express.static('assets'));
 
 // Custom Middleware 1
 app.use( function(req, res, next){
