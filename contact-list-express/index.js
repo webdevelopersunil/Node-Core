@@ -55,6 +55,10 @@ app.get('/practice', function(req, res){
     return res.render('practice', {title : "let us play here"});
 });
 
+// Post method for the dubmit form for name and phone number
+app.post('/create-contact', function (req, res){
+    return res.redirect('/practice');
+});
 
 
 
