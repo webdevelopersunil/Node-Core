@@ -16,6 +16,11 @@ app.set('view engine','ejs');
 // setting here the views folder path
 app.set('views', path.join(__dirname,'views'));
 
+// middleware for parsing the form data
+app.use(express.urlencoded());
+
+
+
 
 
 var contactList = [
@@ -57,7 +62,21 @@ app.get('/practice', function(req, res){
 
 // Post method for the dubmit form for name and phone number
 app.post('/create-contact', function (req, res){
-    return res.redirect('/practice');
+
+    // form data is stored by parser into request body
+    console.log(req.body);
+
+    //push the submit contact details
+    contactList.push({
+        name : req.body.name,
+        phone : req.body.phone
+    });
+
+    // return res.redirect('/');
+
+    // This back keyword will redirect back to the same page with udated results
+    return res.redirect('back');
+
 });
 
 
