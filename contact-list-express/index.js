@@ -96,7 +96,7 @@ app.post('/create-contact', function (req, res){
 // route for deleting contact, uses params url for
 app.get('/delete-contact/:phone', function(req,res){
 
-    console.log(req.params);
+    // get the query from the url
     let phone = req.params.phone;
 
     // Finding the index number if the number is match with the selected phone number
