@@ -36,7 +36,6 @@ app.use( function(req, res, next){
 });
 
 
-
 var contactList = [
     {
         name : 'Sunil',
@@ -91,6 +90,23 @@ app.post('/create-contact', function (req, res){
     // This back keyword will redirect back to the same page with udated results
     return res.redirect('back');
 
+});
+
+
+// route for deleting contact, uses params url for
+app.get('/delete-contact/:phone', function(req,res){
+
+    console.log(req.params);
+    let phone = req.params.phone;
+
+    // Finding the index number if the number is match with the selected phone number
+    let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+
+    if(contactIndex != -1){
+        contactList.splice(contactIndex, 1);
+    }
+
+    return res.redirect('back');
 });
 
 
