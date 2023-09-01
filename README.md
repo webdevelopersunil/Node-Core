@@ -27,3 +27,7 @@ dir : basichttpserver, being used the file system for print html file into the b
 # ejs ( Template Emgine : Embeded JS )
 - installed the ejs and rendered the ejs file.
 - required to set the default template engine to let know the express framework.
+
+# Middleware (app.use(express.urlencoder()))
+- fetch the form data from req.body via parsing formdata
+- multiple custom middle-ware

@@ -20,6 +20,18 @@ app.set('views', path.join(__dirname,'views'));
 app.use(express.urlencoded());
 
 
+// Custom Middleware 1
+app.use( function(req, res, next){
+    req.myname = "Sunil";
+    // console.log("Middleware 1 is being called!")
+    next();
+});
+
+// Custom Middleware 2
+app.use( function(req, res, next){
+    console.log("Middleware 2 is being called!", req.myname)
+    next();
+});
 
 
 
