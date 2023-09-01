@@ -31,3 +31,7 @@ dir : basichttpserver, being used the file system for print html file into the b
 # Middleware (app.use(express.urlencoder()))
 - fetch the form data from req.body via parsing formdata
 - multiple custom middle-ware
+
+# Static files ( app.use(express.static('assets')) )
+- css/js/images directories holds the files for styling HTML
+- implemented css and js static files to the home.ejs file
