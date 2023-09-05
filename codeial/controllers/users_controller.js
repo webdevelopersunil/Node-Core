@@ -1,5 +1,6 @@
 module.exports.profile = function(req, res){
-    res.end('<h1>User Profile Page;</h1>');
+    // res.end('<h1>User Profile Page;</h1>');
+    return res.render('./backend/profile');
 }
 
 module.exports.timeline = function(req, res){
