@@ -46,3 +46,4 @@ dir : basichttpserver, being used the file system for print html file into the b
 - Setted up node server and required repository
 - Added script into the package.json file for the "ndoemon index.js".
 - Setup routes directory & export to host file (index.js)
+- Seperate Controller directory and seperate controller. Exported and calling intoRoot file (index.js)
