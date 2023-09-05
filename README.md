@@ -47,3 +47,6 @@ dir : basichttpserver, being used the file system for print html file into the b
 - Added script into the package.json file for the "ndoemon index.js".
 - Setup routes directory & export to host file (index.js)
 - Seperate Controller directory and seperate controller. Exported and calling intoRoot file (index.js)
+- Multiple Controller functions have mutiple Routes, To manage we require the routes into sub-routes files.
+routes -> (1index.js) (2 users.js)
+users all routes required into the routes/Index.js instead of the root file(index.js)
