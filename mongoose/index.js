@@ -10,6 +10,8 @@ const port = 8000;
 // require the mongoose config connection here
 const db = require('./config/mongoose');
 
+const Contact = require('./models/Contact');
+
 // calling express here as a function, This app function will have the all functionality which needed to run a Server.
 const app = express();
 
@@ -63,12 +65,24 @@ app.get('/', function(req, res){
     // This is auto detect the html and set content-type:html by the Express JS
     // res.send("<h1>Cool, My server is running.</h1>")
 
+    Contact.find({
+
+    }).then(contacts => {
+        return res.render('home',{
+            title : 'E Java Script',
+            contact_list : contacts
+        });
+    }).catch(err => {
+        console.log('error in creating a contact:', err);
+        return res.status(500).send('Internal Server Error'); // Handle the error as needed
+    });
+
     // Rendered the ejs file
     // In case of dynamic pass the value to the ejs file
-    return res.render('home',{ 
-        title : 'E Java Script',
-        contact_list : contactList
-    });
+    // return res.render('home',{
+    //     title : 'E Java Script',
+    //     contact_list : contactList
+    // });
 
 });
 
@@ -83,33 +97,64 @@ app.post('/create-contact', function (req, res){
     console.log(req.body);
 
     //push the submit contact details
-    contactList.push({
-        name : req.body.name,
-        phone : req.body.phone
+    // contactList.push({
+    //     name : req.body.name,
+    //     phone : req.body.phone
+    // });
+
+
+    Contact.create({
+        name: req.body.name,
+        phone: req.body.phone
+    })
+    .then(newContact => {
+        console.log('@@@@@@@', newContact);
+        return res.redirect('back');
+    })
+    .catch(err => {
+        console.log('error in creating a contact:', err);
+        return res.status(500).send('Internal Server Error'); // Handle the error as needed
     });
+    
 
     // return res.redirect('/');
 
     // This back keyword will redirect back to the same page with udated results
-    return res.redirect('back');
+    // return res.redirect('back');
 
 });
 
 
 // route for deleting contact, uses params url for
-app.get('/delete-contact/:phone', function(req,res){
+app.get('/delete-contact/:id', function(req,res){
 
     // get the query from the url
-    let phone = req.params.phone;
+    let id = req.params.id;
 
     // Finding the index number if the number is match with the selected phone number
-    let contactIndex = contactList.findIndex(contact => contact.phone == phone);
+    // let contactIndex = contactList.findIndex(contact => contact.phone == phone);
 
-    if(contactIndex != -1){
-        contactList.splice(contactIndex, 1);
-    }
+    // if(contactIndex != -1){
+        // contactList.splice(contactIndex, 1);
+    // }
 
-    return res.redirect('back');
+    // return res.redirect('back');
+
+
+    Contact.findByIdAndDelete(id)
+    .then(deletedContact => {
+        
+        if (!deletedContact) {
+            // Handle the case where the contact with the given ID was not found
+            return res.status(404).send('Contact not found');
+        }
+        console.log('@@@@@@@', deletedContact);
+        return res.redirect('back');
+    })
+    .catch(err => {
+        console.log('error in deleting a contact:', err);
+        return res.status(500).send('Internal Server Error'); // Handle the error as needed
+    });
 });
 
 
