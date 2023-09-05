@@ -40,3 +40,8 @@ dir : basichttpserver, being used the file system for print html file into the b
 - Mongoose Install
 - Setup Config for connection with mongo DB
 - Error handling for secure connection with mongo db
+
+
+# CODEIAL ( A social application )
+- Setted up node server and required repository
+- Added script into the package.json file for the "ndoemon index.js".
