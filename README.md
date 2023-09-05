@@ -35,3 +35,8 @@ dir : basichttpserver, being used the file system for print html file into the b
 # Static files ( app.use(express.static('assets')) )
 - css/js/images directories holds the files for styling HTML
 - implemented css and js static files to the home.ejs file
+
+# Mongo DB
+- Mongoose Install
+- Setup Config for connection with mongo DB
+- Error handling for secure connection with mongo db
