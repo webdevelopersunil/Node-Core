@@ -9,9 +9,6 @@ app.use(express.static('assets'));
 
 
 
-
-
-
 app.use('/', require('./routes/index'));
 
 
