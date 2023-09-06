@@ -29,3 +29,15 @@ body{
     border-bottom: solid #2D5CFE;
     color: #4AB1FF;
 }
+
+.list-container{
+    background-color: #f2f2f2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.list-container .description{
+    text-align: left;
+}
