@@ -21,10 +21,12 @@ app.use(express.urlencoded());
 // Middleware for static files like (css,js,images and js libraries)
 app.use(express.static('assets'));
 
+const db = require('./config/mongoose');
 
 
 
 
+// Added routes as middleware call here
 app.use('/', require('./routes/index'));
 
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-// connected to the database
-mongoose.connect("mongodb://localhost/todos");
+// include mongoose in our project and open a connection to the todos
+mongoose.connect("mongodb://localhost:27017/todos");
 
 // accesing the database Acquire the connection to check if it is successfull
 const db = mongoose.connection;
