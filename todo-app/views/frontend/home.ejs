@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My ToDo App</title>
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Document</title>
 </head>
+
 <body>
-    <h1>This is my ToDo Application</h1>
+    <div class="wrapper col-md-6">
+        <h1>ToDo Application</h1>
+        <form method="POST" action="/submit-to-do" >
+            
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Task Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputState">State</label>
+                    <select id="inputState" name="category" class="form-control">
+                        <option disabled selected>Please Select...</option>
+                        <option value="Work" >Work</option>
+                        <option value="Office" >Office</option>
+                        <option value="School" >School</option>
+                        <option value="Weekend" >Weekend</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputZip">date</label>
+                    <input type="date" class="form-control" id="inputZip" name="date" >
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
 </body>
+
 </html>
