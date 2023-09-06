@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('./config/mongoose');
 
 // require the path module from the express
 const path = require('path');
@@ -18,10 +19,8 @@ app.set('views', path.join(__dirname,'views'));
 // middleware for parsing the form data
 app.use(express.urlencoded());
 
-// Middleware for static files like (css,js,images and js libraries)
+//Connecting assets to ejs (css,js,images and js libraries)
 app.use(express.static('assets'));
-
-const db = require('./config/mongoose');
 
 
 

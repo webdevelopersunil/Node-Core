@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #808080;
+}
+
+.title {
+  font-size: 2rem;
+  color: #808080;
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+.main-container {
+  background-color: #fff;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_field {
+  padding: 8px;
+}
+
+input[type="text"] {
+  border: none;
+
+  width: 60%;
+  height: 2.2rem;
+}
+
+input[type="date"],
+select {
+  border: none;
+  height: 2.8rem;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.6rem;
+  margin-bottom: 8px;
+}
+
+.option_date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category-container,
+.date-container {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 50%;
+}
+
+.category-container {
+  border-right: 1px solid #888;
+}
+
+/* UL */
+
+#list {
+  list-style: none;
+  padding: 1.8rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding: 8px;
+}
+
+#list input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+#list label {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#list label:before {
+  content: "";
+
+  background-color: transparent;
+  border: 2px solid #444;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#list input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#list input:checked + label:before {
+  background: #555;
+}
+#list input:checked + label {
+  text-decoration: line-through;
+}
+
+.category {
+  padding: 8px;
+  /* background-color: red; */
+  color: white;
+}
+
+.college {
+  background-color: #9c00af;
+}
+
+.placement_prep {
+  background-color: #f2a600;
+}
+
+.personal {
+  background-color: #dc3535;
+}
+
+.label_date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: left;
+}
+
+/* Buttons */
+.btns {
+  width: 40%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  padding: 10px;
+  color: #fff;
+  border: none;
+}
+
+.add {
+  background-color: #444;
+}
+
+.delete {
+  background-color: #ee351e;
+}
+
+.btns a:link,
+a:active,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
