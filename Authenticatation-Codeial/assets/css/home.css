@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.wrapper{
+    width: 500px;
+    text-align: center;
+    margin: 40px auto;
+    background-color: azure;
+}
