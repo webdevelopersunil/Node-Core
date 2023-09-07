@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 // Set Templating Engine
 app.set('view engine', 'ejs');
@@ -17,9 +17,7 @@ app.use(express.static('./assets'));
 
 
 // Routes to use
-app.get('/', (req, res) => {
-    res.render('home');
-});
+app.use('/', require('./server/routes/home'));
 
 
 app.listen(port, (error) => {
