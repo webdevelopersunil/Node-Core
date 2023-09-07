@@ -5,6 +5,9 @@ const port = 8000;
 const expresslayouts = require('express-ejs-layouts');
 // to tell Server to use this layouts
 app.use(expresslayouts);
+// Extract styles and script from sub-pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 const path = require('path');
 app.set('view engine','ejs');
