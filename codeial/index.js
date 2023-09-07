@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+
+const expresslayouts = require('express-ejs-layouts');
+// to tell Server to use this layouts
+app.use(expresslayouts);
+
 const path = require('path');
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'views'));
