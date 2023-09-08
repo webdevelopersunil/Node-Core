@@ -1,3 +1,4 @@
+const User = require('../model/User');
 
 module.exports.singUp = (req, res) => {
 
@@ -18,17 +19,40 @@ module.exports.signIn = (req, res) => {
     return res.render('./sign_in', locals);
 };
 
+module.exports.createUser = async (req, res) => {
 
-module.exports.createUser = (req, res) => {
+    try {
 
-    const locals = {
-        title : "Sign In"
-    };
-    
-    console.log(req.body);
+        const locals = {
+            title : "Sign In"
+        };
+        console.log(req.body); // test purpose
 
-    return res.render('./sign_in', locals);
+        const user = await User.findOne({ _id: req.params.id });
+        
+        if(!user){
+
+            console.log('Common Email Found');
+            return res.redirect('back');
+
+        }else{
+            
+            await User.create({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            });
+
+            return res.render('./sign_in', locals);
+        }
+        
+
+    } catch(error) {
+
+        if(error){ console.error(error); return; }
+    }
 };
+
 
 module.exports.createSession = (req, res) => {
 
