@@ -26,17 +26,18 @@ module.exports.createUser = async (req, res) => {
         const locals = {
             title : "Sign In"
         };
-        console.log(req.body); // test purpose
+        // console.log(req.body); // test purpose
 
-        const user = await User.findOne({ _id: req.params.id });
-        
-        if(!user){
+        const userFound = await User.findOne({ email: req.params.email });
 
+        console.log(userFound);
+
+        if(userFound){
             console.log('Common Email Found');
             return res.redirect('back');
 
         }else{
-            
+            console.log('new user created');
             await User.create({
                 name: req.body.name,
                 email: req.body.email,
