@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8000;
 
+const db = require('./server/config/db');
+
 // Set Templating Engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -15,7 +17,6 @@ app.set('layout','layouts/main');
 // Static files path
 app.use(express.static('./assets'));
 
-
 // Routes to use
 app.use('/', require('./server/routes/home'));
 
@@ -26,4 +27,4 @@ app.listen(port, (error) => {
     }
 
     console.log(`Server is running on port : ${port}`);
-})
+});
