@@ -4,6 +4,10 @@ const port = process.env.PORT || 8000;
 
 const db = require('./server/config/db');
 
+// import the cookie parser
+const cookieParser = require('cookie-parser');
+app.use(cookieParser()); // Middleware to let use the server
+
 // Set Templating Engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
